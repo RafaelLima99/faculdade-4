@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <script>
+            // Nesse código, utilizamos um for executando de 1 a 50, e dentro utilizamos outro for para 
+            // dizer se é primo, segundo a regra de que se i for divisível por algum número entre 2 e i-1 
+            // ele não é primo.
+
+            // Tendo verificado que o número não é primo, não é necessário testar outras divisões, o que 
+            // justifica o uso de break para sair do loop interno.
+            
+            for(i=1; i<=50; i++){
+
+                primo = true;
+                
+                for(j=2; j<i; j++){
+
+                    if(i%j == 0){
+                        primo = false;
+                        break;
+                    }
+                }
+
+                if(primo){
+                    document.writeln("<li>"+i+"</li>")
+                }
+            }
+        </script>
+    </ul>
+</body>
+</html>

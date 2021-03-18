@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- à função validar, relacionada com a submissão do formulário através do evento onsubmit. -->
+    <form action="validarFormulario01.html" method="get" onsubmit="return validar();">
+
+        Nome:<input name="N1" type="text" id="N1"/><br/><br/>
+        
+        Opções de Envio: <br/>
+        
+        <input type="checkbox" name="OPT" value="Revista" id="OPT1"/>
+        
+        Revista Mensal
+        
+        <input type="checkbox" name="OPT" value="Digital" id="OPT2"/>
+        
+        Versão Digital
+        
+        <input type="checkbox" name="OPT" value="SMS" id="OPT3"/>
+        
+        Mensagens SMS<br/><br/>
+        
+        <input type="submit" value="Cadastrar"/>
+        
+        </form>
+        
+        <script>
+            
+            //seleciona os elemento pelo id
+            var objNome = document.getElementById("N1");
+            
+            var objOpt1 = document.getElementById("OPT1");
+            
+            var objOpt2 = document.getElementById("OPT2");
+            
+            var objOpt3 = document.getElementById("OPT3");
+            
+            //função que valida os inputs
+            function validar(){
+                
+                //verifica se o campo nome esta vazio
+                if(objNome.value==""){
+                
+                    alert("Nome deve ser preenchido");
+                    
+                    // o foco é direcionado para a caixa de texto referente a esse dado
+                    objNome.focus();
+                    
+                    //Ao final de cada comando if ocorre uma instrução return false, a qual sai imediatamente da função, 
+                    //retornando o valor false para onsubmit, e impedindo o envio
+                    return false;
+            
+                }
+            
+                // verificar se nenhum dos checkbox foi marcado tilizamos suas propriedades checked
+                // checked retorna true se tiver selecionado, por isso usa a ! para inverter 
+                if(!objOpt1.checked && !objOpt2.checked && !objOpt3.checked){
+                    
+                    alert("Selecione ao menos uma opção de envio");
+                    
+                    return false;
+                
+                }
+            
+                return false;
+            
+            }
+        
+        </script>
+</body>
+</html>

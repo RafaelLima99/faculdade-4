@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" width="100%">
+        <tr>
+        <td>
+        A
+        </td>
+        <td>
+        Fatorial(A)
+        </td>
+        </tr>
+        
+        <script>
+        
+        var a = 1;
+        
+        while(a<10){
+        
+            document.writeln("<tr><td>"+a+"</td>");
+            
+            fat = b = a;
+            // Aqui nós imprimimos o fatorial de cada número entre 1 e 9. Para tal, utilizamos um controle while 
+            // externo, aumentando o valor de a enquanto não atingir o valor 10, e internamente efetuamos o cálculo 
+            // do fatorial com outro bloco while.
+            while(--b>=1){
+            
+                fat *= b;
+                
+                document.writeln("<td>"+a+"</td></tr>");
+                
+                a++;
+            
+            }
+        }
+        
+        </script>
+        
+        </table>
+</body>
+</html>
